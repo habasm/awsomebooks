@@ -10,21 +10,32 @@ function addBook(){
         "id": bookIds,
     };
     bookArr.push(singleBook);
-    bookContainer = document.getElementById("booksList");
-    bookContainer.innerHTML='';
     addBooks(bookArr);
     bookIds+=1;
 }
 
 function removeBook(divid){
     document.getElementById(divid).remove();
+    bookArr.filter((book) => book.id > 0).forEach((book)=>{
+        if(book.id == divid){
+            bookArr = bookArr.filter(book => book.id != divid);
+        }       
+   }); 
 }
 
 function addBooks(arr){
-    const bookContainer = document.getElementById("booksList");    
+    let bookContainer = document.getElementById("booksList"); 
+    const paragraphs = document.querySelectorAll('p');
+    paragraphs.forEach(paragraph => {
+        paragraph.remove();
+    });
+    let html = '';   
     arr.filter((book) => book.id > 0).forEach((book)=>{
-        let html = "<p id='"+book.id+"'>"+book.title+"<br>"+book.author+"</p>";
-        bookContainer.insertAdjacentHTML("beforebegin", html);
+         html += "<p id='"+book.id+"'>"+book.title+
+            "<br>"+ book.author +
+            "<br><button onclick='removeBook("+book.id+")'>Remove Book</button><br>________________"
+         "</p>";
+        
     });    
-    
+    bookContainer.insertAdjacentHTML("beforebegin", html);
 }
