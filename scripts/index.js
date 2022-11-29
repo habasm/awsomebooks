@@ -1,30 +1,44 @@
-let bookIds = 1;
 let bookArr = [];
-function addBook(){  
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-
-    let singleBook = {
-        "title": title,
-        "author": author,
-        "id": bookIds,
-    };
-    bookArr.push(singleBook);
-    bookContainer = document.getElementById("booksList");
-    bookContainer.innerHTML='';
-    addBooks(bookArr);
-    bookIds+=1;
+function removeBook(divid) {
+  bookArr.filter((book) => book.id > 0).forEach((book) => {
+    if (book.id === divid) {
+      document.getElementById(divid).remove();
+      bookArr = bookArr.filter((book) => (book.id !== divid));
+    }
+  });
+  localStorage.setItem('Books', JSON.stringify(bookArr));
 }
 
-function removeBook(divid){
-    document.getElementById(divid).remove();
+function addBooks(arr) {
+  const bookContainer = document.getElementById('booksList');
+  const paragraphs = document.querySelectorAll('p');
+  paragraphs.forEach((paragraph) => {
+    paragraph.remove();
+  });
+  let html = '';
+  arr.filter((book) => book.id > 0).forEach((book) => {
+    html = `${html}<p id='${book.id}'>${book.title
+    }<br>${book.author
+    }<br><button onclick='removeBook(${book.id})'>Remove Book</button><br>________________`
+    + '</p>';
+  });
+  bookContainer.insertAdjacentHTML('beforebegin', html);
 }
 
-function addBooks(arr){
-    const bookContainer = document.getElementById("booksList");    
-    arr.filter((book) => book.id > 0).forEach((book)=>{
-        let html = "<p id='"+book.id+"'>"+book.title+"<br>"+book.author+"</p>";
-        bookContainer.insertAdjacentHTML("beforebegin", html);
-    });    
-    
+function addBook() {
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const singleBook = {
+    title,
+    author,
+    id: new Date().getMilliseconds(),
+  };
+  bookArr.push(singleBook);
+  localStorage.setItem('Books', JSON.stringify(bookArr));
+  addBooks(bookArr);
 }
+
+const loadBooks = localStorage.getItem('Books');
+const myobj = JSON.parse(loadBooks);
+addBooks(myobj);
+bookArr = myobj;
