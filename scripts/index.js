@@ -40,6 +40,7 @@ class Book {
   }
 
   removeBook(divid) {
+    this.divid = divid;
     bookArr.filter((book) => book.id > 0).forEach((book) => {
       if (book.id === divid) {
         document.getElementById(divid).remove();
