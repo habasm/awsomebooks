@@ -39,7 +39,9 @@ To get a local copy up and running follow these simple steps:
 
 👤 **Wahaj Ali**
 
-- GitHub: [@Wahaj Ali](https://github.com/HABASM)
+- GitHub: [@Wahaj Ali](https://github.com/Wahaj-Ali)
+- Twitter: [@](https://twitter.com/Ali96Wahaj)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/wahaj-ali96/)
 
 
 ## 🤝 :raised_hand: :raised_hand: Contributions
