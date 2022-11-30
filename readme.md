@@ -1,16 +1,25 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Awesome Books
-## Awesome books: plain JavaScript with objects
+## Awesome books: a complete website with navigation
 
-In this project, We are build a basic website that allows users to add/remove books from a list. We are achieve that by using JavaScript objects and arrays. And also we are are using it to dynamically modify the DOM and add basic events.
+In this project, We are taking the Awesome books application and convert it into a fully functional website. We are refactoring the project to add three new sections on top of the two sections you have already completed: Books list (done), Add book form (done), a new Contact info section, a Navigation bar, and a Footer.
+
+## Learning objects
+
+- Understand the concept of single page application.
+- Use JavaScript to manipulate DOM elements.
+- Use JavaScript events.
 
 ## Basic Works
  - Add book, Remove book
  - Data preserve to local storage
  - When page refreshed local storage data can be displayed
+ - Section management in the same page via javascript   manipulations.
 
  ![screenshot](/screenhots/1.png)
+ ![screenshot](/screenhots/2.png)
+ ![screenshot](/screenhots/3.png)
 
 ## :red_circle: Live Demo
 
