@@ -17,9 +17,9 @@ In this project, We are taking the Awesome books application and convert it into
  - When page refreshed local storage data can be displayed
  - Section management in the same page via javascript   manipulations.
 
- ![screenshot](/screenhots/1.png)
- ![screenshot](/screenhots/2.png)
- ![screenshot](/screenhots/3.png)
+ ![screenshot](/screenhots/ss1.png)
+ ![screenshot](/screenhots/ss2.png)
+ ![screenshot](/screenhots/ss3.png)
 
 ## :red_circle: Live Demo
 
