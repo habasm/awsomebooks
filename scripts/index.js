@@ -1,76 +1,147 @@
-let bookArr = [];
+/* eslint-disable no-use-before-define */
+/* eslint-disable max-classes-per-file */
 class Book {
-  bookArr = [];
-
-  constructor(title, author, id) {
+  constructor(title, author) {
     this.title = title;
     this.author = author;
-    this.id = id;
+  }
+}
+
+// UI Class: Handle UI Tasks
+class UI {
+  static displayBooks() {
+    const books = Store.getBooks();
+
+    books.forEach((book) => UI.addBookToList(book));
   }
 
-  addBookArr() {
-    const singleBook = {
-      title: this.title,
-      author: this.author,
-      id: this.id,
-    };
-    bookArr.push(singleBook);
+  static addBookToList(book) {
+    const list = document.querySelector('#book-list');
+
+    const bookDisplay = document.createElement('div');
+    bookDisplay.className = 'bookList1';
+    bookDisplay.innerHTML = `
+        <p class="bookTitle"><b>${book.title}</b></p>
+        <p>by<span></span><b>${book.author}.</b></p>
+        <button class="delete">Remove</button>
+        `;
+
+    list.appendChild(bookDisplay);
   }
 
-  returnBooks() {
-    return this.bookArr;
+  static deleteBook(el) {
+    if (el.classList.contains('delete')) {
+      el.parentElement.remove();
+    }
   }
 
-  addBooks(arr) {
-    this.arr = arr;
-    const bookContainer = document.getElementById('booksList');
-    const paragraphs = document.querySelectorAll('table');
-    paragraphs.forEach((paragraph) => {
-      paragraph.remove();
-    });
-    let html = '';
-    bookArr.this = arr;
-    bookArr.this.filter((book) => book.id > 0).forEach((book) => {
-      html = `${html}<table id='${book.id}'><tr><td>"${book.title
-      }" By ${book.author
-      }</td><td id='btn'><button id='${book.id}' onclick='remove(${book.id})'>Remove</button></td></tr>`
-        + '</table>';
-    });
-    bookContainer.insertAdjacentHTML('beforebegin', html);
+  static clearFields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+  }
+}
+
+// Store Class: Handles Storage
+class Store {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
   }
 
-  removeBook(divid) {
-    this.divid = divid;
-    bookArr.filter((book) => book.id > 0).forEach((book) => {
-      if (book.id === divid) {
-        document.getElementById(divid).remove();
-        bookArr = bookArr.filter((book) => (book.id !== divid));
+  static addBook(book) {
+    const books = Store.getBooks();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(title) {
+    const books = Store.getBooks();
+
+    books.forEach((book, index) => {
+      if (book.title === title) {
+        books.splice(index, 1);
       }
     });
-    localStorage.setItem('Books', JSON.stringify(bookArr));
+
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
 
-// when there is a book add button clicked it, will initialize the class for storing
-document.querySelector('#regbook').addEventListener('click', (e) => {
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
-  const id = new Date().getMilliseconds();
-  const myBooks = new Book(title, author, id);
-  myBooks.addBookArr();
-  localStorage.setItem('Books', JSON.stringify(bookArr));
-  myBooks.addBooks(bookArr);
-  document.getElementById('title').value = '';
-  document.getElementById('author').value = '';
+// Event: Display Books
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
+
+// Event: Add a Book
+document.querySelector('#book-form').addEventListener('submit', (e) => {
+  // Prevent actual submit
+  e.preventDefault();
+
+  // Get form values
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+
+  // Instatiate book
+  const book = new Book(title, author);
+
+  // Add Book to UI
+  UI.addBookToList(book);
+
+  // Add book to store
+  Store.addBook(book);
+
+  // Clear fields
+  UI.clearFields();
 });
 
-// load data from local storage if it's available
-const myBooks = new Book('', '', '');
-const loadBooks = localStorage.getItem('Books');
-const myobj = JSON.parse(loadBooks);
-myBooks.addBooks(myobj);
-bookArr = myobj;
+// Event: Remove a Book
+document.querySelector('#book-list').addEventListener('click', (e) => {
+  // Remove book from UI
+  UI.deleteBook(e.target);
 
-function remove(divid) {
-  myBooks.removeBook(divid);
-}
+  // Remove book from store
+  Store.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
+});
+
+const currentDate = new Date().toLocaleString();
+document.getElementById('current-date').innerHTML = currentDate;
+
+// display the books list when click the button "List"
+const bookList = document.querySelector('.list-holder');
+const list = document.querySelector('.list');
+const formContainer = document.querySelector('.form-container');
+
+list.addEventListener('click', () => {
+  bookList.style.display = 'block';
+  formContainer.style.display = 'none';
+  contactInfo.style.display = 'none';
+});
+
+window.addEventListener('load', () => {
+  bookList.style.display = 'block';
+  formContainer.style.display = 'none';
+  contactInfo.style.display = 'none';
+});
+
+// display the Add book form  when click the button "Add new"
+const addNewBtn = document.querySelector('.add');
+
+addNewBtn.addEventListener('click', () => {
+  bookList.style.display = 'none';
+  formContainer.style.display = 'block';
+  contactInfo.style.display = 'none';
+});
+
+// display the  Contact section when click the button "Contact"
+const contactBtn = document.querySelector('.contact');
+const contactInfo = document.querySelector('.contact-info');
+
+contactBtn.addEventListener('click', () => {
+  bookList.style.display = 'none';
+  formContainer.style.display = 'none';
+  contactInfo.style.display = 'block';
+});
