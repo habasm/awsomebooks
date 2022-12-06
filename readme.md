@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Awesome Books
-## Awesome books: a complete website with navigation
+## Awesome books: a complete website with navigation and ES6
 
 In this project, We are taking the Awesome books application and convert it into a fully functional website. We are refactoring the project to add three new sections on top of the two sections you have already completed: Books list (done), Add book form (done), a new Contact info section, a Navigation bar, and a Footer.
 
@@ -21,8 +21,6 @@ In this project, We will restructure the  Awesome books app code. The goal is to
  - Section management in the same page via javascript   manipulations.
 
  ![screenshot](/screenhots/1.png)
- ![screenshot](/screenhots/2.png)
- ![screenshot](/screenhots/3.png)
 
 ## :red_circle: Live Demo
 
