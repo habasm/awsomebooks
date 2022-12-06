@@ -1,69 +1,149 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+<a name="readme-top"></a>
 
-# Awesome Books
-## Awesome books: a complete website with navigation and ES6
+<div align="center">
 
-In this project, We are taking the Awesome books application and convert it into a fully functional website. We are refactoring the project to add three new sections on top of the two sections you have already completed: Books list (done), Add book form (done), a new Contact info section, a Navigation bar, and a Footer.
+  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
 
-In this project, We will restructure the  Awesome books app code. The goal is to make it more organized by using modules. We will also practice the ES6 syntax that we have learned.
+</div>
 
-## Learning objects
+<!-- TABLE OF CONTENTS -->
 
-- Use ES6 modules to write modular JavaScript.
-- Learn how to use proper ES6 syntax.
-- Understand improvements that ES6 brings to JavaScript.
-- Use npm as software packages system.
+# 📗 Table of Contents
 
-## Basic Works
- - Add book, Remove book
- - Data preserve to local storage
- - When page refreshed local storage data can be displayed
- - Section management in the same page via javascript   manipulations.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
- ![screenshot](/screenhots/1.png)
+<!-- PROJECT DESCRIPTION -->
 
-## :red_circle: Live Demo
+# 📖 [Awesome Books] <a name="about-project"></a>
 
-[Live Preview Link](https://habasm.github.io/awsomebooks/)
+> **[Awesome Books]** is a simple website that displays a list of books and allows you to add and remove books from that list.
 
-## :hammer: Built With
+## 🛠 Built With <a name="built-with"></a>
 
-- HTML and JavaScript
+> HTML,
+> CSS and
+> JavaScripts
 
-To get a local copy up and running follow these simple steps:
+### Tech Stack <a name="tech-stack"></a>
 
-1. Go to the [repository page](https://github.com/habasm/awsomebooks/pull/1).
-2. Press the "Code" button and copy the link.
-3. Clone it using git command `git clone <link>`.
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+</details>
 
-## :blue_book: Learning Objectives
+<!-- Features -->
 
-- Understand different ways to create objects in JavaScript.
-- Create and access properties and methods of JavaScript objects.
+### Key Features <a name="key-features"></a>
 
-## Authors
+- **[Make use of classes]**
+- **[Add and Remove books using class methods]**
+- **[Make use of stringify and parse to store and retrieve JS objects from local storage]**
 
-👤 **HABASM**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- GitHub: [@HabAsm](https://github.com/HABASM)
+<!-- LIVE DEMO -->
 
-👤 **Wahaj Ali**
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- GitHub: [@Wahaj Ali](https://github.com/Wahaj-Ali)
-- Twitter: [@](https://twitter.com/Ali96Wahaj)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/wahaj-ali96/)
+- [Live Demo Link](https://habasm.github.io/awsomebooks/)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🤝 :raised_hand: :raised_hand: Contributions
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+> To get a local copy up and running, follow these steps.
+
+## Prerequisites
+
+In order to run this project you need:
+
+> Computer with internet and
+> Visual Studio Code
+
+### Setup
+
+Clone this repository to your desired folder:
+
+1. Clone this repository or download the Zip folder:
+
+**`git clone https://habasm.github.io/awsomebooks.git`**
+
+2. Navigate to the location of the folder in your machine:
+
+**`you@your-Pc-name:~$ cd <folder>`**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Author <a name="authors"></a>
+
+👤 **Christian Ani**
+
+- GitHub: [@habasm](https://github.com/habasm)
+- Twitter: [@habasm](https://twitter.com/habasm)
+- LinkedIn: [@habasm](https://www.linkedin.com/in/habasm/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Create a complete website with navigation.]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/habasm/portfolio/issues).
+Feel free to check the [issues page](https://habasm.github.io/awsomebooks/issues).
 
-## Acknowledgments
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Thanks to Microverse
+<!-- SUPPORT -->
 
-## 📝 License
+## ⭐️ Show your support <a name="support"></a>
 
-This project is [MIT](LICENSE) licensed.
+> If you like this project please give a star.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> I would like to thank my coding partner
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
