@@ -98,7 +98,7 @@ Clone this repository to your desired folder:
 
 ## 👥 Author <a name="authors"></a>
 
-👤 **Christian Ani**
+👤 **Habitamu Asimare**
 
 - GitHub: [@habasm](https://github.com/habasm)
 - Twitter: [@habasm](https://twitter.com/habasm)
