@@ -1,77 +1,11 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable max-classes-per-file */
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
+import { DateTime } from '../modules/luxon.js';
+import Book from '../modules/book.js';
+import UI from '../modules/ui.js';
+import Store from '../modules/store.js';
 
-// UI Class: Handle UI Tasks
-class UI {
-  static displayBooks() {
-    const books = Store.getBooks();
-
-    books.forEach((book) => UI.addBookToList(book));
-  }
-
-  static addBookToList(book) {
-    const list = document.querySelector('#book-list');
-
-    const bookDisplay = document.createElement('div');
-    bookDisplay.className = 'bookList1';
-    bookDisplay.innerHTML = `
-        <p class="bookTitle"><b>${book.title}</b></p>
-        <p>by<span></span><b>${book.author}.</b></p>
-        <button class="delete">Remove</button>
-        `;
-
-    list.appendChild(bookDisplay);
-  }
-
-  static deleteBook(el) {
-    if (el.classList.contains('delete')) {
-      el.parentElement.remove();
-    }
-  }
-
-  static clearFields() {
-    document.querySelector('#title').value = '';
-    document.querySelector('#author').value = '';
-  }
-}
-
-// Store Class: Handles Storage
-class Store {
-  static getBooks() {
-    let books;
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-
-    return books;
-  }
-
-  static addBook(book) {
-    const books = Store.getBooks();
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static removeBook(title) {
-    const books = Store.getBooks();
-
-    books.forEach((book, index) => {
-      if (book.title === title) {
-        books.splice(index, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-}
+// define the current local time
+const currentDate = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+document.getElementById('current-date').innerHTML = currentDate;
 
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -107,18 +41,15 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   Store.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
 });
 
-const currentDate = new Date().toLocaleString();
-document.getElementById('current-date').innerHTML = currentDate;
-
 // display the books list when click the button "List"
-const bookList = document.querySelector('.list-holder');
-const list = document.querySelector('.list');
+const bookList = document.querySelector('.book-list-container');
+const listBtn = document.querySelector('.listBtn');
 const formContainer = document.querySelector('.form-container');
+const contactInfo = document.querySelector('.contact-info');
 
-list.addEventListener('click', () => {
+listBtn.addEventListener('click', () => {
   bookList.style.display = 'block';
   formContainer.style.display = 'none';
-  contactInfo.style.display = 'none';
 });
 
 window.addEventListener('load', () => {
@@ -128,7 +59,7 @@ window.addEventListener('load', () => {
 });
 
 // display the Add book form  when click the button "Add new"
-const addNewBtn = document.querySelector('.add');
+const addNewBtn = document.querySelector('.add-new-btn');
 
 addNewBtn.addEventListener('click', () => {
   bookList.style.display = 'none';
@@ -138,8 +69,6 @@ addNewBtn.addEventListener('click', () => {
 
 // display the  Contact section when click the button "Contact"
 const contactBtn = document.querySelector('.contact');
-const contactInfo = document.querySelector('.contact-info');
-
 contactBtn.addEventListener('click', () => {
   bookList.style.display = 'none';
   formContainer.style.display = 'none';

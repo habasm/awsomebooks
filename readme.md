@@ -5,11 +5,14 @@
 
 In this project, We are taking the Awesome books application and convert it into a fully functional website. We are refactoring the project to add three new sections on top of the two sections you have already completed: Books list (done), Add book form (done), a new Contact info section, a Navigation bar, and a Footer.
 
+In this project, We will restructure the  Awesome books app code. The goal is to make it more organized by using modules. We will also practice the ES6 syntax that we have learned.
+
 ## Learning objects
 
-- Understand the concept of single page application.
-- Use JavaScript to manipulate DOM elements.
-- Use JavaScript events.
+- Use ES6 modules to write modular JavaScript.
+- Learn how to use proper ES6 syntax.
+- Understand improvements that ES6 brings to JavaScript.
+- Use npm as software packages system.
 
 ## Basic Works
  - Add book, Remove book
