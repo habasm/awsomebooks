@@ -20,9 +20,9 @@ In this project, We will restructure the  Awesome books app code. The goal is to
  - When page refreshed local storage data can be displayed
  - Section management in the same page via javascript   manipulations.
 
- ![screenshot](/screenhots/1.png)
- ![screenshot](/screenhots/2.png)
- ![screenshot](/screenhots/3.png)
+ ![screenshot](/screenhots/ss1.png)
+ ![screenshot](/screenhots/ss2.png)
+ ![screenshot](/screenhots/ss3.png)
 
 ## :red_circle: Live Demo
 
