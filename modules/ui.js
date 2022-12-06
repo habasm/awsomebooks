@@ -1,13 +1,13 @@
 import Store from './store.js';
 // UI Class: Handle UI Tasks
 class UI {
-  static displayBooks() {
+  static displayBooks=()=>{
     const books = Store.getBooks();
 
     books.forEach((book) => UI.addBookToList(book));
   }
 
-  static addBookToList(book) {
+  static addBookToList=(book)=> {
     const list = document.querySelector('#book-list');
 
     const bookDisplay = document.createElement('div');
@@ -21,13 +21,13 @@ class UI {
     list.appendChild(bookDisplay);
   }
 
-  static deleteBook(el) {
+  static deleteBook=(el)=>{
     if (el.classList.contains('delete')) {
       el.parentElement.remove();
     }
   }
 
-  static clearFields() {
+  static clearFields=()=>{
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
   }
